@@ -82,3 +82,48 @@ se envia el HTML resultante al navegador/cliente para despues hidratar ese HTML,
 - Mejora el tiempo inicial de carga y el SEO
 - Funciona mejor en conexiones lentas
 - Permite que el contenido sea visible antes de que el JS se cargue
+
+## Prop Drilling
+
+Es el proceso de pasar props a través de varios niveles
+de componentes que no los necesitan, solo para llegar a
+un componente hijo que sí los requiere.
+
+## Evitarlo
+
+- **Context API:** Útil para compartir datos que pueden considerarse "globales" para un árbol de componentes.
+
+```javascript
+const DatoContext = React.createContext();
+
+function AbuloComponent() {
+  return (
+    <DatoContext.Provider value={dato}>
+      <PadreComponent />
+    </DatoContext.Provider>
+  )
+}
+
+function HijoComponent() {
+  const dato = React.useContext(DatoContext);
+  return <p>{dato}</p>
+}
+```
+
+- **Composición de componentes:** Pasar componentes como props en lugar de datos.
+
+```javascript
+function AbueloComponent({ dato }) {
+  return <PadreComponent>
+    <HijoComponent dato={dato} />
+  </PadreComponent>
+}
+
+function PadreComponent({ children }) {
+  return <div>{children}</div>
+}
+```
+
+- **Hooks personalizados:** Encapsular lógica y estado en hooks reutilizables.
+- **Estado global:** Usar librerías como Redux o Recoil para manejar el estado global de la aplicación.
+- **Component Inversion:** Invertir el control pasando funciones de renderizado.
