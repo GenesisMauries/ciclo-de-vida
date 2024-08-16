@@ -47,7 +47,7 @@ actualiza el virtual.
 
 > [!IMPORTANT]
 > **ALGORITMO DIFFING**
-> Cada que hay cun cambio en la UI un nuevo Virtual DOM es creado
+> Cada que hay un cambio en la UI un nuevo Virtual DOM es creado
 > Asi el nuevo y el anterior se comparan, garantizando que se
 > re-renderize la o las partes que cambiaron
 
@@ -63,3 +63,22 @@ actualiza el virtual.
 > El **Virtual DOM** no puede actualizarse directamente, acuta como
 > una copia del DOM real y puede ser actualizado sin que se refresque
 > la pagina.
+
+## Server Side Rendering (SSR)
+
+Tecnica donde el contenido inicial (HTML) de la aplicacion se genera
+en el servidor. En React renderiza los componentes en el servidor y
+se envia el HTML resultante al navegador/cliente para despues hidratar ese HTML, añadiendo event listeners y convirtiendo el contenido estático en una aplicación React interactiva.
+
+### Proceso
+
+1. Servidor recibe solicitud
+2. Renderiza componentes React a HTML estatico
+3. Envia el HTML al cliente
+4. El navegador/cliente hidrata con interactividad
+
+### Ventajas
+
+- Mejora el tiempo inicial de carga y el SEO
+- Funciona mejor en conexiones lentas
+- Permite que el contenido sea visible antes de que el JS se cargue
