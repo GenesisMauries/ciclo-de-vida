@@ -14,3 +14,6 @@
 1. **Desmontaje:**
 
 - Se oculta el componente
+
+> [!NOTE]
+> Cada instancia de un componente tiene su propio ciclo de vida
