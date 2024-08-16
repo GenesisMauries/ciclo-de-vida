@@ -6,12 +6,12 @@
 - Se inicalizan estados
 - Se define JSX a renderizar
 
-1. **Actualizar:**
+2. **Actualizar:**
 
 - Componente re-renderiza si cambia state o props
 - Se ejecuta useEffect si cambiaron las dependencias
 
-1. **Desmontaje:**
+3. **Desmontaje:**
 
 - Se oculta el componente
 
