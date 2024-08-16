@@ -1,9 +1,16 @@
-# React + Vite
+# Ciclo de vida del componente
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. **Montaje:** Un componente es insertado al DOM
 
-Currently, two official plugins are available:
+- Se llama al componente y se ejecuta su cuerpo
+- Se inicalizan estados
+- Se define JSX a renderizar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# ciclo-de-vida
+1. **Actualizar:**
+
+- Componente re-renderiza si cambia state o props
+- Se ejecuta useEffect si cambiaron las dependencias
+
+1. **Desmontaje:**
+
+- Se oculta el componente

@@ -11,6 +11,7 @@ export default function App() {
       <button onClick={() => setShowCounter(!showCounter)}>
         {showCounter ? "Hide Counter 🙈" : "Show Counter 🐵"}
       </button>
+      <Counter />
       {showCounter && <Counter />}
     </main>
   );
