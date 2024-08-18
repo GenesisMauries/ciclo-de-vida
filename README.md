@@ -64,6 +64,8 @@ actualiza el virtual.
 > una copia del DOM real y puede ser actualizado sin que se refresque
 > la pagina.
 
+---
+
 ## Server Side Rendering (SSR)
 
 Tecnica donde el contenido inicial (HTML) de la aplicacion se genera
@@ -80,8 +82,10 @@ se envia el HTML resultante al navegador/cliente para despues hidratar ese HTML,
 ### Ventajas
 
 - Mejora el tiempo inicial de carga y el SEO
-- Funciona mejor en conexiones lentas
+- Funciona mejor en conexiones lentasj
 - Permite que el contenido sea visible antes de que el JS se cargue
+
+---
 
 ## Prop Drilling
 
@@ -89,7 +93,7 @@ Es el proceso de pasar props a través de varios niveles
 de componentes que no los necesitan, solo para llegar a
 un componente hijo que sí los requiere.
 
-## Evitarlo
+### Evitarlo
 
 - **Context API:** Útil para compartir datos que pueden considerarse "globales" para un árbol de componentes.
 
@@ -127,3 +131,5 @@ function PadreComponent({ children }) {
 - **Hooks personalizados:** Encapsular lógica y estado en hooks reutilizables.
 - **Estado global:** Usar librerías como Redux o Recoil para manejar el estado global de la aplicación.
 - **Component Inversion:** Invertir el control pasando funciones de renderizado.
+
+---
