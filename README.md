@@ -1,4 +1,24 @@
-# Ciclo de vida del componente
+## JSX
+
+Extension de sintaxis que combina JS y HTML.
+
+### Reglas
+
+- Devolver un unico elemento raiz
+- Cerrar todas la etiquetas
+- CamelCase en atributos y eventos. (aria-*y data-* se escriben
+como en HTML)
+
+---
+
+## Que es un componente
+
+Bloque de codigo reutilizable que encapsula logica e interfaz visual.
+(Se pueden anidar, algunos tienen estado otros son representativos)
+
+---
+
+## Ciclo de vida del componente
 
 1. **Montaje:** Un componente es insertado al DOM
 
@@ -17,6 +37,38 @@
 
 > [!NOTE]
 > Cada instancia de un componente tiene su propio ciclo de vida
+
+---
+
+## Fragment
+
+Componente o elemento para agurpar mas elementos sin añadir
+nodos adicionales
+
+---
+
+## Hook
+
+Fragmento de logica reutilizable que empieza con use
+
+---
+
+## State
+
+Objeto/informacion en la interfaz que cambia con el paso del tiempo (es mutable)
+
+---
+
+## Props
+
+Son objetos para la comunicacion entre componentes
+Propiedades para pasar datos del componente padre al hijo.
+
+> [!NOTE]
+> El hijo al padre emite de dos formas:
+> 1.- Pasando el setState como propo
+> 2.- Funcion auxiliar en el padre que reciba la informacion desde
+> el hijo y realice el el set del estado
 
 ---
 
@@ -131,5 +183,52 @@ function PadreComponent({ children }) {
 - **Hooks personalizados:** Encapsular lógica y estado en hooks reutilizables.
 - **Estado global:** Usar librerías como Redux o Recoil para manejar el estado global de la aplicación.
 - **Component Inversion:** Invertir el control pasando funciones de renderizado.
+
+---
+
+## useContext
+
+Hook de React que permite acceder al contexto, una forma nativa de
+compartir datos globales entre componentes sin necesidad de pasar
+props manualmente a través de cada nivel de la jerarquía de
+componentes.
+
+---
+
+## useEffect
+
+Evento secundario, array de dependencias indica cuando se debe llamar
+
+---
+
+## Redux
+
+Para no teneer descentralizado el estado y no estar pensando en
+que componente estamos o jerarquia de componentes
+
+### Store
+
+**Un solo estado global**: Todo el estado de la aplicación
+se guarda en un único objeto llamado "store".
+
+- Es el objeto que contiene el estado global de la aplicación.
+- Es único en toda la aplicación.
+- Se crea con la función createStore de Redux.
+
+### Actions
+
+El estado es de solo lectura y para cambiar el estado,
+se debe emitir una acción (un objeto que describe qué sucedió).
+
+- Son objetos que describen cambios en el estado.
+- Tienen una propiedad 'type' obligatoria.
+- Se envían al store con store.dispatch().
+
+### Reducers
+
+Reducers son funciones puras que reciben el estado actual y una acción, y devuelven un nuevo estado.
+
+Nunca modifican el estado directamente, siempre devuelven un
+nuevo objeto de estado.
 
 ---
