@@ -1,23 +1,33 @@
-import { useState } from "react";
 import "./App.css";
-import Counter from "./components/Counter/Counter";
-import { Header } from "./components/Counter/Header/Header";
-import { BrowserRouter } from "react-router-dom";
-
+import { TwitterFollowCard } from "./TwitterFollowCard";
 export default function App() {
-  const [showCounter, setShowCounter] = useState(false);
+  const formatUsername = (username) => `@${username}`;
   return (
-    <main className="App">
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
-
-      <h1>Lifecycle</h1>
-      <button onClick={() => setShowCounter(!showCounter)}>
-        {showCounter ? "Hide Counter 🙈" : "Show Counter 🐵"}
-      </button>
-      {/* <Counter /> */}
-      {showCounter && <Counter />}
-    </main>
+    <section className="App">
+      <TwitterFollowCard
+        username="midudev"
+        name="Miguel Duran"
+        isFollowing={true}
+        formatUsername={formatUsername}
+      />
+      <TwitterFollowCard
+        username="pheralb"
+        name="Pablo Hernandez"
+        isFollowing={false}
+        formatUsername={formatUsername}
+      />
+      <TwitterFollowCard
+        username="kikobeats"
+        name="Kiko Beats"
+        isFollowing={true}
+        formatUsername={formatUsername}
+      />
+      <TwitterFollowCard
+        username="elonmusk"
+        name="Elon Musk"
+        isFollowing={false}
+        formatUsername={formatUsername}
+      />
+    </section>
   );
 }

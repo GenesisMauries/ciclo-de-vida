@@ -1,5 +1,14 @@
 # Apuntes REACT 💙
 
+## Que es React
+
+Biblioteca JS para construir interfaces de usuario. Es agnostico, independientemente
+de donde sea terminal, navegador y se puede ejecutar en el cliente o el servidor
+
+> [!NOTE]
+> El codigo imperativo (descriptivo) no escala bien
+> React renderiza elemen
+
 ## JSX
 
 Extension de sintaxis que combina JS y HTML.
@@ -64,13 +73,17 @@ Objeto/informacion en la interfaz que cambia con el paso del tiempo (es mutable)
 ## Props
 
 Son objetos para la comunicacion entre componentes
-Propiedades para pasar datos del componente padre al hijo.
 
 > [!NOTE]
 > El hijo al padre emite de dos formas:
 > 1.- Pasando el setState como propo
 > 2.- Funcion auxiliar en el padre que reciba la informacion desde
 > el hijo y realice el el set del estado
+
+Propiedades para pasar datos del componente padre al hijo.
+
+> [!IMPORTANT]
+> Cuando intentas acceder a una prop que no fue pasada su valor sera undefined
 
 ---
 
