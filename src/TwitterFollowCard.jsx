@@ -34,7 +34,12 @@ export const TwitterFollowCard = ({
           }
           onClick={handleClick}
         >
-          {isFollowing ? "Siguiendo" : "Seguir"}
+          <span className="tw-followCard-text">
+            {" "}
+            {isFollowing ? "Siguiendo" : "Seguir"}
+          </span>
+
+          <span className="tw-followCard-stopFollow">Dejar de seguir</span>
         </button>
       </aside>
     </article>
