@@ -83,7 +83,8 @@ Son objetos para la comunicacion entre componentes
 Propiedades para pasar datos del componente padre al hijo.
 
 > [!IMPORTANT]
-> Cuando intentas acceder a una prop que no fue pasada su valor sera undefined
+> Cuando intentas acceder a una prop que no fue pasada su valor sera undefined;
+> No modificar pops directamente, mejor mutarla en una variable
 
 ---
 
@@ -200,6 +201,10 @@ function PadreComponent({ children }) {
 - **Component Inversion:** Invertir el control pasando funciones de renderizado.
 
 ---
+
+## useState
+
+Devuelve un array con dos elementos
 
 ## useContext
 
